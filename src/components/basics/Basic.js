@@ -1,1 +1,1 @@
-// Basic elements of the app
+// Basic components of the app
