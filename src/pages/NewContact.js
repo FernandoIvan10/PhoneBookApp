@@ -2,6 +2,7 @@ import { useContext} from "react";
 import { Input } from "../components/basics/Basic";
 import { RiContactsBook3Fill } from "react-icons/ri";
 import Provider, { AppContext } from "../provider";
+import { Link } from "react-router-dom";
 
 // User can add new contact
 export default function NewContactPage(){
@@ -15,7 +16,7 @@ export default function NewContactPage(){
             return
         }
         // New contact is added to contacts
-        setContacts([...contacts, contact]);
+        setContacts([...contacts, {...contact,isEditing:false}]);
         alert('Contact saved successfully')
         // Form is cleared
         setContact({name:'',phone:'',description:''})
@@ -25,7 +26,9 @@ export default function NewContactPage(){
         <>
             <div>
                 <h1>Phone Book</h1>
-                <RiContactsBook3Fill />
+                <Link to="/contact-list">
+                    <RiContactsBook3Fill />
+                </Link>
             </div>
             <div>
                 <Input 

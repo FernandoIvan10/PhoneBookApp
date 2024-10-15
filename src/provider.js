@@ -9,7 +9,8 @@ export const Provider = ({ children }) => {
     const [contact, setContact] = useState({
         name: '',
         phone: '',
-        description: ''
+        description: '',
+        isEditing: false
     })
     //Status hook that stores a contact list
     const [contacts, setContacts] = useState([])
