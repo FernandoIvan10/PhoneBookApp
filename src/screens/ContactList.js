@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
-import { Contact, EditContact, Input } from "../components/basics/Basic";
-import { MdPersonSearch } from "react-icons/md";
+import { Input } from "../components/basics/Basic";
+import { Contact, EditContact } from "../components/contacts/Contact";
 import { AppContext } from "../provider";
-import { IoMdArrowRoundBack } from "react-icons/io";
+import { IoMdArrowRoundBack, IoMdPersonAdd } from "react-icons/io";
 import { Link } from "react-router-dom";
+import './../assets/styles/screens/ContactList.css'
 
 // User can see his contact list
 export default function ContactListPage(){
@@ -56,6 +57,7 @@ export default function ContactListPage(){
                 if(contact.isEditing===false){
                     return (
                         <Contact 
+                            className="div-target"
                             key={id}
                             name={contact.name} 
                             phone={contact.phone} 
@@ -67,6 +69,7 @@ export default function ContactListPage(){
                 }else{
                     return(
                         <EditContact
+                            className="div-target"
                             key={id}
                             name={contact.name} 
                             phone={contact.phone} 
@@ -79,23 +82,29 @@ export default function ContactListPage(){
     }
 
     return(
-        <>
-            <Link to="/new-contact">
-                <IoMdArrowRoundBack />
-            </Link>
-            <div>
-                <Input 
+        <div className="div-main">
+            <div className="div-header">
+                <h1>Phones</h1>
+            </div>
+            <div className="body">
+            <div className="div-search">
+            <Input className="input-search"
+                    classNameLabel="input-search-label"
+                    classNameInput="input-search-input"
                     id="search" 
-                    type="text" 
+                    type="text"
+                    label="Search: " 
                     placeholder="write a contact name" 
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}/>
-                <button><MdPersonSearch /></button>
+                <Link to="/new-contact">
+                    <IoMdPersonAdd className="icon-add-contact"/>
+                </Link>
             </div>
-            <h2>Phones</h2>
             <div>
             {generateList()}
             </div>
-        </>
+            </div>
+        </div>
     )
 }

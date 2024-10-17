@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  background-color:#F6F4EB;
+}
+
+.div-header{
+  background-color: #91C8E4;
+  width: 50%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  color: white;
+}
+
+h1{
+  margin: 0 auto;
+  width: fit-content;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+.div-main{
+  margin: 0 auto;
+  position: relative;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-top: 20px; /* Optional padding if needed */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

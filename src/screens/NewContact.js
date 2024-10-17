@@ -1,8 +1,9 @@
 import { useContext} from "react";
 import { Input } from "../components/basics/Basic";
 import { RiContactsBook3Fill } from "react-icons/ri";
-import Provider, { AppContext } from "../provider";
+import { AppContext } from "../provider";
 import { Link } from "react-router-dom";
+import './../assets/styles/screens/NewContact.css';
 
 // User can add new contact
 export default function NewContactPage(){
@@ -23,15 +24,17 @@ export default function NewContactPage(){
     }
 
     return (
-        <>
-            <div>
+        <div className="div-main">
+            <div className="div-header">
                 <h1>Phone Book</h1>
                 <Link to="/contact-list">
-                    <RiContactsBook3Fill />
+                    <RiContactsBook3Fill className="icon-list" />
                 </Link>
             </div>
-            <div>
-                <Input 
+            <div className="div-form">
+                <Input className="div-input"
+                    classNameLabel="input-label"
+                    classNameInput="input"
                     label="Name: " 
                     id="contact-name" 
                     type="text"
@@ -39,7 +42,9 @@ export default function NewContactPage(){
                     value={contact.name}
                     onChange={(e)=>setContact({...contact, name: e.target.value})}
                     />
-                <Input
+                <Input className="div-input"
+                    classNameLabel="input-label"
+                    classNameInput="input"
                     label="Phone: "
                     id="contact-phone" 
                     type="text"
@@ -47,7 +52,9 @@ export default function NewContactPage(){
                     value={contact.phone}
                     onChange={(e)=>setContact({...contact, phone: e.target.value})}
                 />
-                <Input
+                <Input className="div-input"
+                    classNameLabel="input-label"
+                    classNameInput="input"
                     label="Description: "
                     id="contact-description" 
                     type="text" 
@@ -55,8 +62,8 @@ export default function NewContactPage(){
                     value={contact.description}
                     onChange={(e)=>setContact({...contact, description: e.target.value})}
                 />
+                <button id="button-save" onClick={saveHandler}>Save</button>
             </div>
-            <button id="button-save" onClick={saveHandler}>Save</button>
-        </>
+        </div>
     )
 }
