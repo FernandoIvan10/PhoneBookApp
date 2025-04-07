@@ -24,11 +24,14 @@ Este proyecto es una versión simplificada de una agenda de contactos, creada co
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/FernandoIvan10/PhoneBookApp.git
+   ```
 
 2. Instala las dependencias:
   ```bash
    npm install
+   ```
 
 3. Inicia el entorno de desarrollo:
   ```bash
   npm run dev
+   ```
