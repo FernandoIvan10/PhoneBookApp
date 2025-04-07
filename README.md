@@ -35,3 +35,6 @@ Este proyecto es una versión simplificada de una agenda de contactos, creada co
   ```bash
   npm start
    ```
+
+## Licencia
+Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](./LICENSE) para más detalles.
