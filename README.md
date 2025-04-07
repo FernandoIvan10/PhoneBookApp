@@ -33,5 +33,5 @@ Este proyecto es una versión simplificada de una agenda de contactos, creada co
 
 3. Inicia el entorno de desarrollo:
   ```bash
-  npm run dev
+  npm start
    ```
